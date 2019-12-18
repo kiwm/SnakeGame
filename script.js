@@ -1,6 +1,8 @@
 canvas = document.getElementById("canvas")
 context = canvas.getContext('2d')
 context.scale(10, 10)
+context.strokeStyle = '#09f'
+context.lineCap = 'round'
 snake = [
     [1, 6],
     [1, 5],
@@ -10,6 +12,7 @@ snake = [
 ]
 
 direction = [0, 0]
+food = [5, 5]
 
 document.addEventListener('keypress', move)
 
@@ -61,13 +64,23 @@ function updateLoop() {
     tail[1] = head[1] + direction[1]
     snake.unshift(tail)
     verifymove()
+    if(head[0] == food[0] && head[1] == food[1]) {
+        food = [(Math.random() * 40) | 0 , (Math.random() * 40) | 0]
+    }
     draw()
 }
 
 function draw() {
     context.clearRect(0, 0, 500, 500)
+
+    context.fillStyle = 'red'
+    context.fillRect(food[0], food[1], 1, 1)
+    context.fillStyle = 'black'
     snake.forEach(function([x, y]) {
         context.fillRect(x, y, 1, 1)
+        
     })
 }
+
+
 
