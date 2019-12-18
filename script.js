@@ -15,8 +15,6 @@ document.addEventListener('keypress', move)
 
 function move(e) {
     var code = e.which || e.keyCode;
-    console.log(code)
-    console.log(direction)
     if (code == '119' && !(direction[0] == 0 && direction[1] == 1)) { //cima
         direction = [0, -1]
         updateLoop()
@@ -40,7 +38,7 @@ function verifymove() {
     if(head[0] > 49 || head[0] < 0 || head[1] > 49 || head[1] < 0){
         gameOver()
     }
-    for(i = 1; i < snake.length; i++) {
+    for(i = 1; i < snake.length; i++) {      
         if(snake[i][0] == head[0] && snake[i][1] == head[1]) {
             gameOver()
         }
@@ -50,6 +48,10 @@ function verifymove() {
 function gameOver() {
     document.removeEventListener('keypress', move)
     window.alert("Game Over")
+}
+
+function grow() {
+    snake.push([1, 1])
 }
 
 function updateLoop() {
