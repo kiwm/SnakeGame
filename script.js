@@ -15,19 +15,21 @@ document.addEventListener('keypress', move)
 
 function move(e) {
     var code = e.which || e.keyCode;
-    if (code == '87') {
+    console.log(code)
+    console.log(direction)
+    if (code == '119' && !(direction[0] == 0 && direction[1] == 1)) { //cima
         direction = [0, -1]
         updateLoop()
     }
-    else if (code == '83') {
+    else if (code == '115' && !(direction[0] == 0 && direction[1] == -1)) { //baixo
         direction = [0, 1] 
         updateLoop()
     }
-    else if (code == '65') {
+    else if (code == '97' && !(direction[0] == 1 && direction[1] == 0)) { //esquerda
         direction = [-1, 0]
         updateLoop()
     }
-    else if (code == '68') {
+    else if (code == '100' && !(direction[0] == -1 && direction[1] == 0)) { //direita
         direction = [1, 0]
         updateLoop()
     } 
@@ -38,11 +40,8 @@ function verifymove() {
     if(head[0] > 49 || head[0] < 0 || head[1] > 49 || head[1] < 0){
         gameOver()
     }
-    console.log(head)
     for(i = 1; i < snake.length; i++) {
-        console.log(snake[i])
         if(snake[i][0] == head[0] && snake[i][1] == head[1]) {
-            console.log("sldkfjsld")
             gameOver()
         }
     }
