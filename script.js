@@ -53,9 +53,7 @@ function gameOver() {
     window.alert("Game Over")
 }
 
-function grow() {
-    snake.push([1, 1])
-}
+
 
 function updateLoop() {
     tail = snake.pop()
@@ -63,10 +61,11 @@ function updateLoop() {
     tail[0] = head[0] + direction[0]
     tail[1] = head[1] + direction[1]
     snake.unshift(tail)
-    verifymove()
     if(head[0] == food[0] && head[1] == food[1]) {
         food = [(Math.random() * 40) | 0 , (Math.random() * 40) | 0]
+        snake.push([-19, -19])
     }
+    verifymove()
     draw()
 }
 
