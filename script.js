@@ -15,7 +15,6 @@ document.addEventListener('keypress', move)
 
 function move(e) {
     var code = e.which || e.keyCode;
-    console.log(code)
     if (code == '87') {
         direction = [0, -1]
         updateLoop()
@@ -39,6 +38,14 @@ function verifymove() {
     if(head[0] > 49 || head[0] < 0 || head[1] > 49 || head[1] < 0){
         gameOver()
     }
+    console.log(head)
+    for(i = 1; i < snake.length; i++) {
+        console.log(snake[i])
+        if(snake[i][0] == head[0] && snake[i][1] == head[1]) {
+            console.log("sldkfjsld")
+            gameOver()
+        }
+    }
 }
 
 function gameOver() {
@@ -54,7 +61,6 @@ function updateLoop() {
     snake.unshift(tail)
     verifymove()
     draw()
-    console.log(head)
 }
 
 function draw() {
