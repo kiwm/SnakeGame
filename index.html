@@ -14,13 +14,14 @@
     </header>
     <div>
         <section>
-            <input type="submit" name="botao" value="Start" class="botaoEnviar" onclick="start()"/>
+            <input type="submit" id='btn1' value="Start" class="botaoEnviar" onclick="start()"/>
             <div id="div1">
                 <canvas id="canvas" width=500 height=500>
                     <img src="food.png" id="food">
                 </canvas>
-    
             </div>
+            <p id ="score"></p>
+            <input type="submit" id='btn2' value="Replay" class="botaoEnviar" onclick="replay()"/>
         </section>
     </div>
     <footer>

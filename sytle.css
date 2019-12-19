@@ -2,6 +2,17 @@ canvas {
     border: solid 2px;
 }
 
+p#score {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+input#btn2 {
+    display: none;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
 body {
     text-align: center;
     font: normal 20px Arial;
@@ -18,13 +29,13 @@ div#div1 {
     border-radius: 6px;
     background-color: #FCC302;
     font-size: 18px;
-    margin: 15px;
     margin: center;
 }
 
 section { 
-    width: 520px;
     margin: auto;
+    padding: 8px;
+    width: 530px;
     background-color: rgba(74, 116, 11, 0.219);
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
