@@ -1,6 +1,7 @@
 canvas = document.getElementById("canvas")
 context = canvas.getContext('2d')
 context.scale(10, 10)
+document.body.style.backgroundImage = "url('background.jpg')"
 snake = [
     [1, 6],
     [1, 5],
@@ -12,13 +13,17 @@ snake = [
 direction = [1, 0]
 food = [5, 5]
 
-document.addEventListener('keypress', move)
-setInterval(updateLoop, 100) 
+function start() {
+    console.log('sdlfkj')
+    document.getElementById('div1').style.display = "block"
+    document.addEventListener('keypress', move)
+    setInterval(updateLoop, 100) 
+}
 
 function move(e) {
     var code = e.which || e.keyCode;
     if (code == '119' && !(direction[0] == 0 && direction[1] == 1)) { //cima
-        direction = [0, -1]
+        direction = [0, -1]        
     }
     else if (code == '115' && !(direction[0] == 0 && direction[1] == -1)) { //baixo
         direction = [0, 1] 
@@ -66,12 +71,10 @@ function updateLoop() {
 
 function draw() {
     context.clearRect(0, 0, 500, 500)
-
-    context.fillStyle = 'red'
-    context.fillRect(food[0], food[1], 1, 1)
+    var img = document.getElementById('food')
+    context.drawImage(img, food[0], food[1], 2, 2)
     context.fillStyle = 'black'
     snake.forEach(function([x, y]) {
-        context.lineWidth = 1.5
         context.fillRect(x, y, 1, 1)
         
     })

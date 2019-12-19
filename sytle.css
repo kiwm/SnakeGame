@@ -1,3 +1,32 @@
 canvas {
-    border: solid 2px red;
+    border: solid 2px;
+}
+
+body {
+    text-align: center;
+    font: normal 20px Arial;
+}
+div#div1 {
+    display: none;
+}
+
+.botaoEnviar{
+    width: 350px;
+    text-align: center;
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #FCC302;
+    font-size: 18px;
+    margin: 15px;
+    margin: center;
+}
+
+section { 
+    width: 520px;
+    margin: auto;
+    background-color: rgba(74, 116, 11, 0.219);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
+    text-align: center;
 }
