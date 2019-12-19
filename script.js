@@ -13,25 +13,21 @@ direction = [1, 0]
 food = [5, 5]
 
 document.addEventListener('keypress', move)
-    myVar = setInterval(updateLoop, 200) 
+setInterval(updateLoop, 100) 
 
 function move(e) {
     var code = e.which || e.keyCode;
     if (code == '119' && !(direction[0] == 0 && direction[1] == 1)) { //cima
         direction = [0, -1]
-        updateLoop()
     }
     else if (code == '115' && !(direction[0] == 0 && direction[1] == -1)) { //baixo
         direction = [0, 1] 
-        updateLoop()
     }
     else if (code == '97' && !(direction[0] == 1 && direction[1] == 0)) { //esquerda
         direction = [-1, 0]
-        updateLoop()
     }
     else if (code == '100' && !(direction[0] == -1 && direction[1] == 0)) { //direita
         direction = [1, 0]
-        updateLoop()
     } 
 }
 
