@@ -1,8 +1,6 @@
 canvas = document.getElementById("canvas")
 context = canvas.getContext('2d')
 context.scale(10, 10)
-context.strokeStyle = '#09f'
-context.lineCap = 'round'
 snake = [
     [1, 6],
     [1, 5],
@@ -11,10 +9,11 @@ snake = [
     [1, 2],
 ]
 
-direction = [0, 0]
+direction = [1, 0]
 food = [5, 5]
 
 document.addEventListener('keypress', move)
+    myVar = setInterval(updateLoop, 200) 
 
 function move(e) {
     var code = e.which || e.keyCode;
@@ -76,6 +75,7 @@ function draw() {
     context.fillRect(food[0], food[1], 1, 1)
     context.fillStyle = 'black'
     snake.forEach(function([x, y]) {
+        context.lineWidth = 1.5
         context.fillRect(x, y, 1, 1)
         
     })
