@@ -2,6 +2,7 @@ canvas = document.getElementById("canvas")
 context = canvas.getContext('2d')
 context.scale(10, 10)
 document.body.style.backgroundImage = "url('background.jpg')"
+
 snake = [
     [1, 6],
     [1, 5],
@@ -18,12 +19,12 @@ function start() {
     document.getElementById('btn1').style.display = "none"
     document.getElementById('div1').style.display = "block"
     document.addEventListener('keypress', move)
-    var handle = setInterval(updateLoop, 60) 
+    var handle = setInterval(updateLoop, 60)
+    setTimeout(move, 60) 
 }
 
 function move(e) {
     var code = e.which || e.keyCode;
-    console.log(code)
     if (code == '119' && !(direction[0] == 0 && direction[1] == 1)) { //cima
         direction = [0, -1]       
     }
@@ -63,6 +64,7 @@ function gameOver() {
 function replay() {
     location.reload()
 }
+
 function updateLoop() {
     tail = snake.pop()
     head = snake[0]
@@ -85,8 +87,7 @@ function draw() {
     context.drawImage(img, food[0], food[1], 2, 2)
     context.fillStyle = 'green'
     snake.forEach(function([x, y]) {
-        context.fillRect(x, y, 1, 1)
-        
+        context.fillRect(x, y, 1, 1)  
     })
 }
 
