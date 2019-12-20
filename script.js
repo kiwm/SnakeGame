@@ -55,7 +55,9 @@ function gameOver() {
     text = document.getElementById('score')
     text.innerText = 'Game Over! \n Score: ' + score
     document.getElementById('btn2').style.display = "block"
+    direction = [0, 0]
     clearInterval(handle)
+    
 }
 
 function replay() {
