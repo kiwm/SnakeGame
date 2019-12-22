@@ -1,6 +1,6 @@
 canvas = document.getElementById("canvas")
 context = canvas.getContext('2d')
-context.scale(10, 10)
+context.scale(16, 16)
 document.body.style.backgroundImage = "url('background.jpg')"
 
 snake = [
@@ -24,7 +24,6 @@ function start() {
 } 
 
 function move(e) {
-    console.log(marcador)
     if(marcador == true) {
         var code = e.keyCode;
         if (code == '87' && !(direction[1] == 1)) { //cima
@@ -46,7 +45,8 @@ function move(e) {
 
 function verifymove() {
     head = snake[0]
-    if(head[0] > 49 || head[0] < 0 || head[1] > 49 || head[1] < 0){
+    console.log(head)
+    if(head[0] > 31 || head[0] < 0 || head[1] > 31 || head[1] < 0){
         gameOver()
     }
     for(i = 1; i < snake.length; i++) {      
@@ -77,7 +77,7 @@ function updateLoop() {
         snake[0][1] + direction[1]
     ])
     if(head[0] == food[0] && head[1] == food[1] || head[0] == food[0] && head[1] == food[1] + 1 || head[0] == food[0] + 1 && head[1] == food[1] || head[0] == food[0] + 1 && head[1] == food[1] + 1) {
-        food = [(Math.random() * 40) | 0 , (Math.random() * 40) | 0]
+        food = [(Math.random() * 30) | 0 , (Math.random() * 30) | 0]
         snake.push([-19, -19])
         snake.push([-19, -19])
         score++
@@ -96,7 +96,21 @@ function draw() {
 
     for(i = 0; i < snake.length; i++) {
         if (i == 0) {
-            context.drawImage(headD, snake[i][0], snake[i][1], 1, 1)
+            if (direction[1] == 1) {
+                context.drawImage(headB, snake[i][0], snake[i][1], 1, 1)
+            } 
+            
+            if (direction[1] == -1) { 
+                context.drawImage(headU, snake[i][0], snake[i][1], 1, 1)             
+            } 
+            
+            if (direction[0] == 1) { 
+                context.drawImage(headR, snake[i][0], snake[i][1], 1, 1) 
+            } 
+            
+            if (direction[0] == -1) { 
+                context.drawImage(headL, snake[i][0], snake[i][1], 1, 1)  
+            }
         } else{
             context.fillRect(snake[i][0], snake[i][1], 1, 1)
         }     
