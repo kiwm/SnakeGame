@@ -92,7 +92,7 @@ function draw() {
     var img = document.getElementById('food')
     var headD = document.getElementById('headD')
     context.drawImage(img, food[0], food[1], 2, 2)
-    context.fillStyle = 'green'
+    context.fillStyle = 'rgb(142, 198, 63)'
 
     for(i = 0; i < snake.length; i++) {
         if (i == 0) {
