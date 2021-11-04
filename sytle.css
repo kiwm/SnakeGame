@@ -17,26 +17,29 @@ body {
     text-align: center;
     font: normal 20px Arial;
 }
-div#div1 {
-    display: none;
-}
 
 .botaoEnviar{
     width: 350px;
     text-align: center;
     padding: 15px 20px;
-    border: 1px solid #eee;
+    border: none;
     border-radius: 6px;
     background-color: #FCC302;
     font-size: 18px;
     margin: center;
+    cursor: pointer;
 }
 
+.botaoEnviar:hover {
+    transition: 0.3s ease-out;
+    color: #FCC302;
+    background-color: white;
+}
 section { 
     margin: auto;
     padding: 8px;
     width: 530px;
-    background-color: rgba(74, 116, 11, 0.219);
+    background-color: rgba(0, 0, 0, 0.219);
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
     text-align: center;

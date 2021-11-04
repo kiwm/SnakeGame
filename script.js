@@ -90,9 +90,8 @@ function updateLoop() {
 function draw() {
     context.clearRect(0, 0, 500, 500)
     var img = document.getElementById('food')
-    var headD = document.getElementById('headD')
     context.drawImage(img, food[0], food[1], 2, 2)
-    context.fillStyle = 'rgb(142, 198, 63)'
+    context.fillStyle = 'rgb(142, 220, 63)'
 
     for(i = 0; i < snake.length; i++) {
         if (i == 0) {
@@ -101,15 +100,15 @@ function draw() {
             } 
             
             if (direction[1] == -1) { 
-                context.drawImage(headU, snake[i][0], snake[i][1], 1, 1)             
+                context.drawImage(headU, snake[i][0], snake[i][1], 1, 1)     
             } 
             
             if (direction[0] == 1) { 
-                context.drawImage(headR, snake[i][0], snake[i][1], 1, 1) 
+                context.drawImage(headR, snake[i][0], snake[i][1], 1, 1)
             } 
             
             if (direction[0] == -1) { 
-                context.drawImage(headL, snake[i][0], snake[i][1], 1, 1)  
+                context.drawImage(headL, snake[i][0], snake[i][1], 1, 1)
             }
         } else{
             context.fillRect(snake[i][0], snake[i][1], 1, 1)
